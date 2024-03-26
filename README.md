@@ -4,12 +4,8 @@ marp: true
 
 # Tutoring Log Application
 
----
-
 
 # MVC Pattern
-
----
 ## General UML Diagram
 
 
@@ -17,8 +13,6 @@ marp: true
 
 
 # Code
-
----
 ## Drive Class
 - TutoringLog.java
 
