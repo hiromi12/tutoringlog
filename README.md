@@ -1,7 +1,3 @@
----
-marp: true
----
-
 # Tutoring Log Application
 
 
