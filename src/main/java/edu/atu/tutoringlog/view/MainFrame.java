@@ -16,7 +16,7 @@ public class MainFrame extends JFrame {
         super("Tutoring Log");
 
         // configure the main frame's properties
-        setSize(1000, 600);  // frame size
+        setSize(1200, 800);  // frame size
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // set default close operation
         setLayout(new BorderLayout());  // set layout manager
 
