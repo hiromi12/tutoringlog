@@ -1,4 +1,17 @@
 package edu.atu.tutoringlog.model;
 
-public class LogDataModel {
+/*
+* Data Model Interface for
+* - title
+* - dateTime
+* - studentName
+* - courseName
+* - instructorName
+* - description
+*/
+
+public interface LogDataModel {
+    void setValue(String value);
+    String getValue();
+    String toJSONString();
 }
