@@ -1,7 +1,7 @@
 package edu.atu.tutoringlog;
 
 import javax.swing.SwingUtilities;
-import edu.atu.tutoringlog.view.MainFrame;
+import edu.atu.tutoringlog.controller.MainController;
 
 /**
  *
@@ -9,7 +9,7 @@ import edu.atu.tutoringlog.view.MainFrame;
  */
 public class TutoringLog {
     public static void main(String[] args) {
-        // method reference that refers to the constructor of MainFrame
-        SwingUtilities.invokeLater(MainFrame::new);
+        // method reference that refers to the constructor of MainController : Aggregation
+        SwingUtilities.invokeLater(MainController::new);
     }
 }
