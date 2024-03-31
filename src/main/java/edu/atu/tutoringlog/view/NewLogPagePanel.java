@@ -1,5 +1,8 @@
 package edu.atu.tutoringlog.view;
 
+import edu.atu.tutoringlog.controller.LogFormListener;
+import edu.atu.tutoringlog.model.LogEntry;
+
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
@@ -11,7 +14,6 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 public class NewLogPagePanel extends JPanel {
-
     // UI components
     private JTextField studentNameField;
     private JTextField dateTimeField;
@@ -22,7 +24,12 @@ public class NewLogPagePanel extends JPanel {
     private JButton submitButton;
 //    private JButton clearButton;
 
-    public NewLogPagePanel() {
+    private final LogFormListener listener;
+
+    public NewLogPagePanel(LogFormListener listener) {
+        // event listener
+        this.listener = listener;
+
         // TODO: Modify text field size
         setLayout(new GridBagLayout()); // set the layout manager
         GridBagConstraints constraints = new GridBagConstraints();
@@ -108,6 +115,35 @@ public class NewLogPagePanel extends JPanel {
         submitButton = new JButton("Submit");
         add(submitButton, constraints);
 
+        // action listener for submit button
+        submitButton.addActionListener(e -> {
+            if (listener != null) listener.submitNewLogEntry();
+        });
+
         // TODO: Implement clear button
+    }
+
+    public String getLogTitleField() {
+        return logTitleField.getText();
+    }
+    public String getDateTimeField() {
+        return dateTimeField.getText();
+    }
+    public String getStudentNameField() {
+        return studentNameField.getText();
+    }
+    public String getCourseNameField() {
+        return courseNameField.getText();
+    }
+    public String getInstructorNameField() {
+        return instructorNameField.getText();
+    }
+    public String getDescriptionArea() {
+        return descriptionArea.getText();
+    }
+
+    // getter function for listener
+    public LogFormListener getListener() {
+        return listener;
     }
 }
