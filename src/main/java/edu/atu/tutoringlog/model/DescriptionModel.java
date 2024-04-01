@@ -11,10 +11,4 @@ public class DescriptionModel implements LogDataModel {
     public String getValue() {
         return description;
     }
-
-    @Override
-    public String toJSONString() {
-        // TODO: Implement toJSONString method for description
-        return null;
-    }
 }

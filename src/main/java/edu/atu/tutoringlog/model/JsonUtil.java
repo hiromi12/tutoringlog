@@ -22,12 +22,12 @@ public class JsonUtil {
                 LogEntry logEntry = new LogEntry();
 
                 // safely extract data using optString instead of getString to avoid JSONException
-                logEntry.setTitle(logJson.optString("title", "Default Title"));
-                logEntry.setDateTime(logJson.optString("dateTime", "1970-01-01T00:00:00"));
-                logEntry.setStudentName(logJson.optString("studentName", "Unknown"));
-                logEntry.setCourseName(logJson.optString("courseName", "Unknown Course"));
-                logEntry.setInstructorName(logJson.optString("instructorName", "Unknown Instructor"));
-                logEntry.setDescription(logJson.optString("description", ""));
+                logEntry.title.setValue(logJson.optString("title", "Default Title"));
+                logEntry.dateTime.setValue(logJson.optString("dateTime", "1970-01-01T00:00:00"));
+                logEntry.studentName.setValue(logJson.optString("studentName", "Unknown"));
+                logEntry.courseName.setValue(logJson.optString("courseName", "Unknown Course"));
+                logEntry.instructor.setValue(logJson.optString("instructorName", "Unknown Instructor"));
+                logEntry.description.setValue(logJson.optString("description", ""));
 
                 logEntries.add(logEntry);
             }

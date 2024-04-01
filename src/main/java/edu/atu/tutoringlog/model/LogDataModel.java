@@ -13,5 +13,4 @@ package edu.atu.tutoringlog.model;
 public interface LogDataModel {
     void setValue(String value);
     String getValue();
-    String toJSONString();
 }
