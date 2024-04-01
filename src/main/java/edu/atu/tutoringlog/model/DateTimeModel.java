@@ -20,10 +20,4 @@ public class DateTimeModel implements LogDataModel {
     public String getValue() {
         return dateTime != null ? dateTime.format(formatter) : null;
     }
-
-    @Override
-    public String toJSONString() {
-        // TODO: Implement toJSONString method for date/time
-        return null;
-    }
 }

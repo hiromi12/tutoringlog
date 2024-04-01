@@ -11,10 +11,4 @@ public class InstructorNameModel implements LogDataModel {
     public String getValue() {
         return instructorName;
     }
-
-    @Override
-    public String toJSONString() {
-        // TODO: Implement toJSONString method for instructorName
-        return null;
-    }
 }

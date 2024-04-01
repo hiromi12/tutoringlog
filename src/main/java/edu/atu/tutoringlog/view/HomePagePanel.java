@@ -1,6 +1,6 @@
 package edu.atu.tutoringlog.view;
 
-import edu.atu.tutoringlog.model.LogEntry;
+import edu.atu.tutoringlog.model.*;
 
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -38,11 +38,11 @@ public class HomePagePanel extends JPanel {
         // Add new data from logEntries
         for (LogEntry entry : logEntries) {
             Object[] row = new Object[5];
-            row[0] = entry.getDateTime();
-            row[1] = entry.getTitle();
-            row[2] = entry.getStudentName();
-            row[3] = entry.getCourseName();
-            row[4] = entry.getInstructorName();
+            row[0] = entry.dateTime.getValue();
+            row[1] = entry.title.getValue();
+            row[2] = entry.studentName.getValue();
+            row[3] = entry.courseName.getValue();
+            row[4] = entry.instructor.getValue();
 
             model.addRow(row); // Add the row to the model
         }

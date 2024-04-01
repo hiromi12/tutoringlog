@@ -11,10 +11,4 @@ public class TitleModel implements LogDataModel {
     public String getValue() {
         return title;
     }
-
-    @Override
-    public String toJSONString() {
-        // TODO: Implement toJSONString method for title
-        return null;
-    }
 }
