@@ -1,44 +1,50 @@
-{
-  "tutoringLogs": [
+{"tutoringLogs": [
     {
-      "title": "Homework Problem",
-      "dateTime": "2024-03-14T14:00:00",
-      "studentName": "Student Name",
-      "courseName": "Course Name",
-      "instructorName": "Instructor Name",
-      "description": "Description"
+        "dateTime": "2024-03-14T14:00:00",
+        "courseName": "Course Name",
+        "instructorName": "Instructor Name",
+        "studentName": "Student Name",
+        "description": "Description",
+        "title": "Homework Problem"
     },
     {
-      "title": "Pointer",
-      "dateTime": "2024-03-10T14:00:00",
-      "studentName": "Student Name",
-      "courseName": "Course Name",
-      "instructorName": "Instructor Name",
-      "description": "Description"
+        "dateTime": "2024-03-10T14:00:00",
+        "courseName": "Course Name",
+        "instructorName": "Instructor Name",
+        "studentName": "Student Name",
+        "description": "Description",
+        "title": "Pointer"
     },
     {
-      "title": "Vector",
-      "dateTime": "2024-03-03T14:00:00",
-      "studentName": "Student Name",
-      "courseName": "Course Name",
-      "instructorName": "Instructor Name",
-      "description": "Description"
+        "dateTime": "2024-03-03T14:00:00",
+        "courseName": "Course Name",
+        "instructorName": "Instructor Name",
+        "studentName": "Student Name",
+        "description": "Description",
+        "title": "Vector"
     },
     {
-      "title": "Japanese",
-      "dateTime": "2024-03-01T14:00:00",
-      "studentName": "Student Name",
-      "courseName": "Course Name",
-      "instructorName": "Instructor Name",
-      "description": "Description"
+        "dateTime": "2024-03-01T14:00:00",
+        "courseName": "Course Name",
+        "instructorName": "Instructor Name",
+        "studentName": "Student Name",
+        "description": "Description",
+        "title": "Japanese"
     },
     {
-      "title": "Java",
-      "dateTime": "2024-03-18T14:00:00",
-      "studentName": "Student Name",
-      "courseName": "Course Name",
-      "instructorName": "Instructor Name",
-      "description": "Description"
+        "dateTime": "2024-03-18T14:00:00",
+        "courseName": "Course Name",
+        "instructorName": "Instructor Name",
+        "studentName": "Student Name",
+        "description": "Description",
+        "title": "Java"
+    },
+    {
+        "dateTime": "2024-03-31T18:54:00",
+        "courseName": "Web Scripting",
+        "instructorName": "J. Wood",
+        "studentName": "Sally Kojima",
+        "description": "Description will be here.",
+        "title": "Title will be here"
     }
-  ]
-}
+]}

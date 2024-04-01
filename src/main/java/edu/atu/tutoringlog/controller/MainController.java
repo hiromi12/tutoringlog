@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.io.IOException;
 import java.util.Collections;
 
-public class MainController {
+public class MainController implements LogFormListener {
     private final MainFrame mainFrame;
     private final NewLogPagePanel newLogForm;
     private final HomePagePanel tableView;
@@ -19,7 +19,7 @@ public class MainController {
     public MainController () {
         // initialize the home panel and the new log page panel
         tableView = new HomePagePanel();
-        newLogForm = new NewLogPagePanel();
+        newLogForm = new NewLogPagePanel(this);
         mainFrame = new MainFrame(tableView, newLogForm);   // Build main frame
 
         // fetch data and build table
@@ -49,5 +49,19 @@ public class MainController {
         }
         // Return an empty list or null in case of errors, depending on your error handling strategy
         return Collections.emptyList();
+    }
+
+    @Override
+    public void submitNewLogEntry() {
+        LogEntry logEntry = new LogEntry();
+
+        logEntry.createNewLog(newLogForm.getLogTitleField(),
+                newLogForm.getDateTimeField(),
+                newLogForm.getStudentNameField(),
+                newLogForm.getCourseNameField(),
+                newLogForm.getInstructorNameField(),
+                newLogForm.getDescriptionArea());
+
+        fetchDataAndUpdateTable();
     }
 }
