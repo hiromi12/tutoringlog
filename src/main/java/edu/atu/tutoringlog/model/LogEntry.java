@@ -1,6 +1,12 @@
 package edu.atu.tutoringlog.model;
 
-import java.time.LocalDateTime;
+import org.json.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.io.IOException;
 
 public class LogEntry {
     private String dateTime;
@@ -47,5 +53,56 @@ public class LogEntry {
     }
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void createNewLog(String title,
+                             String dateTime,
+                             String studentName,
+                             String courseName,
+                             String instructor,
+                             String description) {
+        LogEntry logEntry = new LogEntry();
+        logEntry.setTitle(title);
+        logEntry.setDateTime(dateTime);
+        logEntry.setStudentName(studentName);
+        logEntry.setCourseName(courseName);
+        logEntry.setInstructorName(instructor);
+        logEntry.setDescription(description);
+
+        // convert LogEntry to JSON
+        JSONObject logJson = new JSONObject();
+        try {
+            logJson.put("title", logEntry.getTitle());
+            logJson.put("dateTime", logEntry.getDateTime());
+            logJson.put("studentName", logEntry.getStudentName());
+            logJson.put("courseName", logEntry.getCourseName());
+            logJson.put("instructorName", logEntry.getInstructorName());
+            logJson.put("description", logEntry.getDescription());
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
+        // append to JSON file
+        appendLogToJsonFile(logJson, "data/tutoringLog.json");
+    }
+
+    private static void appendLogToJsonFile(JSONObject logEntry, String filePath) {
+        try {
+            JSONObject root;
+            if (Files.exists(Paths.get(filePath))) {
+                String content = new String(Files.readAllBytes(Paths.get(filePath)));
+                root = new JSONObject(content);
+            } else {
+                root = new JSONObject();
+                root.put("tutoringLogs", new JSONArray());
+            }
+
+            root.getJSONArray("tutoringLogs").put(logEntry);
+
+            // write back to the file
+            Files.write(Paths.get(filePath), root.toString(4).getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
