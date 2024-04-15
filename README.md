@@ -1,4 +1,4 @@
-# Tutoring Log Application using MVC Pattern
+# MVC Pattern
 
 <strong>MVC pattern</strong> divides the application into three interconnected components: Model, View, and Controller, each with distinct responsibilities.
 
